@@ -1,47 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 void main() {
-  runApp(MyApp());
+  return runApp(
+    MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.red,
+        appBar: AppBar(
+          title: Text('Dicee'),
+          backgroundColor: Colors.red,
+        ),
+        body: DicePage(),
+      ),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
+class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.teal,
-        body: SafeArea(
-          child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Container(
-                  width: 100.0,
-                  color: Colors.red,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 100.0,
-                      height: 100.0,
-                      color: Colors.yellow,
-                    ),
-                    Container(
-                      width: 100.0,
-                      height: 100.0,
-                      color: Colors.green,
-                    ),
-                  ],
-                ),
-                Container(
-                  width: 100.0,
-                  height: double.infinity,
-                  color: Colors.blue,
-                ),
-              ]),
+    return Row(
+      children: <Widget>[
+        Expanded(
+          child: Image.asset(
+            'images/dice1.png',
+          ),
         ),
-      ),
+        Expanded(
+          child: Image.asset(
+            'images/dice2.png',
+          ),
+        ),
+      ],
     );
   }
 }
